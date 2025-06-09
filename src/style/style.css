@@ -1,0 +1,229 @@
+a {
+    color: rgb(16, 110, 24); 
+    text-decoration: none; 
+    font-family: "myFont", "korean", sans-serif; 
+}
+.header a{
+    color: white;
+}
+
+@font-face {
+    font-family: "myFont";
+    src: url("../Fonts/ShipporiMincho-Regular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "myFont";
+    src: url("../Fonts/ShipporiMincho-Bold.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'korean';
+    src: url('../Fonts/GowunBatang-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'korean';
+    src: url('../Fonts/GowunBatang-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+.body{
+    font-family: "myFont", "korean", sans-serif; 
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    transition: background-color 1s ease;
+    background-color: white;
+}
+
+
+.menu-toggle {
+    display: none;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 30;
+
+    border: none;
+    cursor: pointer;
+    mix-blend-mode: difference;
+    padding: 0.5rem;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    mix-blend-mode: difference;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0; /* Start from left edge */
+    height: 100vh;
+    width: 200px;
+    background-color: rgb(0,0,0,0);
+    transition: transform 0.3s ease; /* Use transform for better performance */
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 2rem;
+    background-color: rgb(0,0,0,0);
+    z-index: 10;
+    pointer-events: none; /* Allow clicking through the navbar */
+}
+@media screen and (max-width: 1150px) and (min-width: 768px){
+    main {
+        max-width: calc(100% - 200px);
+        margin-left: 200px !important;
+        margin-right: auto;
+    }
+}
+/* Media query for mobile devices */
+@media screen and (max-width: 768px) {
+    /*
+    body.scrolled {
+        background-color: white;
+    }
+
+    body:not(.scrolled) {
+        background-color: black;
+    }
+
+    body:not(.scrolled) .header a {
+        color: #999 !important;
+    }
+
+    body.scrolled .header a {
+        color: black !important;
+    }*/
+    
+    
+    .menu-toggle {
+        display: block;
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 30;
+        background: none;
+        border: none;
+    }
+
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 100%;
+        height: 100vh;
+        width: 200px;
+        background-color: white;
+        transition: transform 0.3s ease;
+        transform: none;
+        padding-top: 4rem;
+    }
+
+    .navbar.active {
+        transform: translateX(-200px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* X, Y, blur, color */
+    }
+
+    .navbar a {
+        margin: 0;
+        font-size: 0.9rem;
+    }
+    
+    body main {
+        margin-left: 0;
+        margin-right: auto; /* Keep centered on mobile */
+        padding: 2rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    margin: 1rem 0; /* Add vertical margin to create space between links */
+    transition: color 0.3s ease;
+    pointer-events: auto; /* Re-enable clicking for the links */
+}
+
+.navbar a:hover {
+    color: #666;
+}
+
+/* Add margin to main content to prevent overlap with navbar */
+main {
+    overflow-x: hidden;
+    font-size: 1.4rem;
+    margin-left: auto; /* Adjust this value based on your navbar width */
+    margin-right: auto; /* Add auto margin to center */
+    padding: 0;
+    background-color: rgba(0,0,0,0);
+    width: min(1200px, calc(100%));
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Specific styles for main element in index.astro */
+body:has(section.hero) main {
+    padding:0;
+}
+
+.header {
+    padding-left: 1rem;
+    position: fixed;
+    z-index: 20; /* Higher than navbar's z-index */
+    mix-blend-mode:difference;
+}
+.header h1{
+    margin: 0;
+    padding: 0;
+}
+.hero {
+    height: 100vh; /* Changed from height to min-height */
+    background-size: cover;
+    background-position: center;
+    margin: 0; /* Remove margin to prevent offset */
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+.hero-image {
+    width: max(50%, 900px);
+    object-fit: cover;
+    margin: 0 auto;
+}
+
+.content {
+    padding: 2rem;
+    background-color: white;
+    min-height: 90vh;
+}
+
