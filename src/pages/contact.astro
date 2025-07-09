@@ -3,5 +3,17 @@ import Layout from '../Layout/layout.astro';
 ---
 
 <Layout title="about">
-About Page
+    <div class ="contactInfo">
+    Contact me here: <br>
+    NTCKim@uchicago.edu
+    <br>
+    <style>
+      .email::after {
+        content: attr(data-text);
+      }
+    </style>
+    <a href="https://www.linkedin.com/in/kim-nathaniel/" target="_blank">LinkedIn</a><br>
+    <a href="https://github.com/ntckim" target="_blank">Github</a>
+    </div>
+    
 </Layout>

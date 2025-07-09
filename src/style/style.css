@@ -3,9 +3,6 @@ a {
     text-decoration: none; 
     font-family: "myFont", "korean", sans-serif; 
 }
-.header a{
-    color: white;
-}
 
 @font-face {
     font-family: "myFont";
@@ -36,6 +33,12 @@ a {
 }
 .body{
     font-family: "myFont", "korean", sans-serif; 
+    margin: 0;
+    overscroll-behavior: none;
+  overflow-x: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
 }
 html, body {
     margin: 0;
@@ -179,14 +182,15 @@ html, body {
 
 /* Add margin to main content to prevent overlap with navbar */
 main {
-    overflow-x: hidden;
+
     font-size: 1.4rem;
     margin-left: auto; /* Adjust this value based on your navbar width */
     margin-right: auto; /* Add auto margin to center */
     padding: 0;
     background-color: rgba(0,0,0,0);
-    width: min(1200px, calc(100%));
+    width: min(1000px, calc(100%));
     box-sizing: border-box; /* Include padding in width calculation */
+    overflow-x: hidden;
 }
 
 /* Specific styles for main element in index.astro */
@@ -198,7 +202,11 @@ body:has(section.hero) main {
     padding-left: 1rem;
     position: fixed;
     z-index: 20; /* Higher than navbar's z-index */
-    mix-blend-mode:difference;
+
+}
+
+.header a{
+    color: black;
 }
 .header h1{
     margin: 0;
@@ -214,6 +222,7 @@ body:has(section.hero) main {
     align-items: center;
     justify-content: center;
     padding: 0;
+    position: relative; /* Add this for absolute positioning of caption */
 }
 .hero-image {
     width: max(50%, 900px);
@@ -221,9 +230,64 @@ body:has(section.hero) main {
     margin: 0 auto;
 }
 
+.hero-caption {
+    position: absolute;
+    bottom: 35rem;
+    right: 7rem;
+    /*right:3rem;*/
+    background-color: rgba(255, 255, 255, 0.0);
+
+    font-size: 3rem;
+    font-weight: bold;
+    color: grey;
+    text-align: center;
+    z-index: 5;
+
+    mix-blend-mode: difference;
+}
+
+.caption-caption{
+    font-size: 2rem;
+}
+
 .content {
     padding: 2rem;
     background-color: white;
-    min-height: 90vh;
-}
 
+    display: flex; /* This enables flexbox */
+    flex-direction: column; /* Stacks children vertically */
+    justify-content: center; /* Centers children vertically */
+    align-items: center; /* Centers children horizontally */
+    text-align: justify; /* Centers text horizontally for inline elements */
+    line-height: 1.6;
+    display: inline-block;
+}
+.contactInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    line-height: 1.6;
+}
+.spacer-small { height: 1rem; }
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .project {
+    background-color: #eee;
+
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  .project img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
