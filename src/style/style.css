@@ -50,15 +50,11 @@ body {
     height: 100vh;
     transition: background-color 1s ease;
     background-color: black;
-    background-image: url('/media/red.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     color: white;
     display: grid;
     grid-template-columns: 1fr 550px;
     grid-template-rows: 1fr;
+    position: relative;
 }
 
 
@@ -418,3 +414,78 @@ body:has(section.hero) main {
     height: 100%;
     object-fit: cover; /* Cover the entire area */
   }
+
+/* Left-streaking blur animation for all text */
+
+@keyframes leftStreak {
+    0% {
+        text-shadow: 
+            0 0 0 currentColor,
+            -1px 0 2px rgba(255, 255, 255, 0.8);
+        filter: blur(2px);
+    }
+    25% {
+        text-shadow: 
+            0 0 0 currentColor,
+            -2px 0 3px rgba(255, 255, 255, 0.9);
+    }
+    50% {
+        text-shadow: 
+            0 0 0 currentColor,
+            -3px 0 4px rgba(255, 255, 255, 1);
+
+    }
+    75% {
+        text-shadow: 
+            0 0 0 currentColor,
+            -2px 0 3px rgba(255, 255, 255, 0.9);
+
+    }
+    100% {
+        text-shadow: 
+            0 0 0 currentColor,
+            -1px 0 2px rgba(255, 255, 255, 0.8);
+        filter: blur(0px);
+    }
+}
+
+/*
+.main-text{
+    animation: leftStreak 6s ease-in-out infinite;
+}*/
+
+/* Pixelated Background Effect */
+.pixelated-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    display: grid;
+    grid-template-columns: repeat(60, 1fr);
+    grid-template-rows: repeat(40, 1fr);
+    gap: 0;
+    background-color: black;
+}
+
+.pixel {
+    width: calc(100% + 1px);
+    height: calc(100% + 1px);
+    margin: -0.5px;
+    background-image: url('/media/red.jpg');
+    background-size: 6000% 4000%; /*change values for cool things 3000 2000 is pretty cool*/
+    background-attachment: fixed;
+    transform: scale(0);
+    opacity: 0;
+    transition: all 0.3s ease-out;
+    box-sizing: border-box;
+}
+
+.pixel.revealed {
+    transform: scale(1);
+    opacity: 1;
+    animation: pixelLife 8s ease-in-out infinite;
+}
+
+
