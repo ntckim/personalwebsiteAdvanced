@@ -1,111 +1,24 @@
 ---
-import Layout from '../Layout/layout.astro';
-import { technologies } from '../data/technologies.js';
-
+import Layout1 from '../Layout/Layout1.astro';
 ---
-
-<Layout title="home">
-  <section class="hero">
-    <img src="/media/river.jpg" alt="Nathaniel Kim" class="hero-image" />
-    <div class="hero-caption">
-        Nathaniel Kim<br><span class="caption-caption">CS @ Uchicago</span>
-</div>
-      </div>
-  </section>
-  
-  <section class="content">
-    The official website for Nathaniel Kim.
-    <div class="spacer-small"></div>
-    <div class="spacer-small"></div>
-    I am a second-year undergraduate from New Jersey studying Computer Science and East Asian Languages and Cultures at the University of Chicago.
-    <div class="spacer-small"></div>
-    Right now, I'm doing research with Uchicago's <a href="https://super.cs.uchicago.edu/" target="_blank" >SUPERgroup</a> on privacy and security.
-    <div class="spacer-small"></div>
-    I'm still undecided on my career path, but I am dipping my feet into the worlds of software development, machine learning, data science, and research. This summer, aside from continuing with my research, I plan on working on lots of personal projects and experimenting with game development.
-    <div class="spacer-small"></div>
-    In my free time, I like to play video games, watch movies, go to the gym, and listen to music. (I'm currently really into J-rock)!
-    <div class="spacer-small"></div>
-  </section>
-
-  <!-- Add a heading for your tech grid -->
-  <section class="tech-section">
-    <h3>Technologies & Tools</h3>
-    <div class="tech-grid">
-      {technologies.map((tech) => (
-        <div class="tech-card" >
-          <div class="tech-icon">
-            {tech.icon ? (
-              <img src={tech.icon} alt={tech.name} width="40" height="40" loading="lazy" />
-            ) : (
-              <span class="tech-fallback-icon">{tech.name.charAt(0)}</span>
-            )}
-          </div>
-          <h3>{tech.name}</h3>
+<Layout1 title="Home">
+    <div class="image-carousel">
+        <div class="carousel-container">
+            <img src="/media/placeholder.jpg" alt="Nathaniel Kim" class="top-image active" />
+            <img src="/media/profile.jpg" alt="Nathaniel Kim" class="top-image" />
+            <img src="/media/river.jpg" alt="Nathaniel Kim" class="top-image" />
         </div>
-      ))}
+        <button class="carousel-btn prev-btn" onclick="changeImage(-1)">‹</button>
+        <button class="carousel-btn next-btn" onclick="changeImage(1)">›</button>
     </div>
-  </section>
-</Layout>
+    <br>
+    The official website for Nathaniel Kim.<br><br>
+    I am a second-year undergraduate from New Jersey studying Computer Science and East Asian Languages and Cultures at the University of Chicago.
+    <br>
+    Right now, I'm doing research with Uchicago's <a href="https://super.cs.uchicago.edu/" target="_blank" >SUPERgroup</a> on privacy and security.
+    <br>
+    I'm still undecided on my career path, but I am dipping my feet into the worlds of software development, machine learning, data science, and research. This summer, aside from continuing with my research, I plan on working on lots of personal projects and experimenting with game development.
+    <br>
+    In my free time, I like to play video games, watch movies, go to the gym, and listen to music. (I'm currently really into J-rock)!
 
-<style>
-  /* Add these styles to your existing CSS */
-  .tech-section {
-    padding: 0 1rem;
-  }
-
-  .tech-section h3 {
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 1.8rem;
-    color: var(--heading-color); /* Use your theme color */
-  }
-
-  .tech-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 1.5rem;
-    padding: 1rem;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-  
-  .tech-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.05);
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  
-  .tech-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-  
-  .tech-icon {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .tech-icon img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  .tech-fallback-icon {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  .tech-card h3 {
-    margin: 0.5rem 0 0;
-    font-size: 0.9rem;
-    text-align: center;
-  }
-</style>
+</Layout1>
