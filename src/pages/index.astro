@@ -2,78 +2,14 @@
 import Layout1 from '../Layout/Layout1.astro';
 ---
 <Layout1 title="Home">
-    <div class="pixelated-background" id="pixelatedBg"></div>
-    <div class="image-carousel">
-        <div class="carousel-container">
-            <img src="/media/placeholder.jpg" alt="Nathaniel Kim" class="top-image active" />
-            <img src="/media/profile.jpg" alt="Nathaniel Kim" class="top-image" />
-            <img src="/media/river.jpg" alt="Nathaniel Kim" class="top-image" />
-        </div>
-        <button class="carousel-btn prev-btn" onclick="changeImage(-1)">‹</button>
-        <button class="carousel-btn next-btn" onclick="changeImage(1)">›</button>
+    <img src="/media/me.png" alt="Nathaniel Kim" class="pfp-image" />
+    <div class="main-text">
+        I am a <b>Software Developer</b> / <b>Privacy and Security Researcher</b> in the <b>Chicago</b> & 
+        <b>NYC</b> areas.<br>
+        I am a third year at the <b>University of Chicago</b> studying <b>Computer Science</b> and 
+        <b>Media Arts and Design</b>.<br>
+        Currently, I am doing privacy and security research with Uchicago's <a href="https://super.cs.uchicago.edu/"> SUPERgroup.</a><br>
+        My interests within CS include <b>Software Development</b>, <b>Web Design</b>, <b>UI/UX</b>, <b>Data Science</b>, and <b>Game Development</b>. In my free time, I enjoy photography, watching movies, powerlifting, and listening to j-rock.
     </div>
-    <div class ="main-text">
-    The official website for Nathaniel Kim.<br><br>
-    I am a second-year undergraduate from New Jersey studying Computer Science and East Asian Languages and Cultures at the University of Chicago.
-    <br>
-    Right now, I'm doing research with Uchicago's <a href="https://super.cs.uchicago.edu/" target="_blank" >SUPERgroup</a> on privacy and security.
-    <br>
-    I'm still undecided on my career path, but I am dipping my feet into the worlds of software development, machine learning, data science, and research. This summer, aside from continuing with my research, I plan on working on lots of personal projects and experimenting with game development.
-    <br>
-    In my free time, I like to play video games, watch movies, go to the gym, and listen to music. (I'm currently really into J-rock)!
-</div>
-
-<script>
-function createPixelatedBackground() {
-    const pixelatedBg = document.getElementById('pixelatedBg');
-    if (!pixelatedBg) return;
-    
-    const cols = 60;
-    const rows = 40;
-    const totalPixels = cols * rows;
-
-    // Create pixel grid
-    for (let i = 0; i < totalPixels; i++) {
-        const pixel = document.createElement('div');
-        pixel.className = 'pixel';
-        
-        // Calculate row and column
-        const row = Math.floor(i / cols);
-        const col = i % cols;
-        
-        // Set background position for this pixel
-        const bgPosX = (col / (cols - 1)) * 100;
-        const bgPosY = (row / (rows - 1)) * 100;
-        pixel.style.backgroundPosition = `${bgPosX}% ${bgPosY}%`;
-        
-        pixelatedBg.appendChild(pixel);
-    }
-
-    // Animate pixels from right to left
-    setTimeout(() => {
-        const pixels = document.querySelectorAll('.pixel');
-        
-        pixels.forEach((pixel, index) => {
-            const row = Math.floor(index / cols);
-            const col = index % cols;
-            
-            // Calculate delay based on column position (right to left)
-            // Add some randomness to row timing for more organic feel
-            const columnDelay = (cols - col - 1) * 15; // Base delay from right
-            const rowOffset = row * 5; // Small row offset
-            const randomOffset = Math.random() * 20; // Random variation
-            
-            const totalDelay = columnDelay + rowOffset + randomOffset;
-            
-            setTimeout(() => {
-                pixel.classList.add('revealed');
-            }, totalDelay);
-        });
-    }, 500); // Initial delay before animation starts
-}
-
-// Start the animation when page loads
-document.addEventListener('DOMContentLoaded', createPixelatedBackground);
-</script>
 
 </Layout1>

@@ -12,16 +12,12 @@ import '../style/style.css';
 		<title>{title}</title>
 	</head>
 	<body>
-        <button class="menu-toggle" aria-label="Toggle navigation menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+        <!-- 
 		<div class = "top-bar">
 			<a href="/" class="logo">Nathaniel Kim</a>
-		</div>
+		</div>-->
         <nav class="navbar">
-            
+            <a href="/">Nathaniel Kim</a>
             <a href="/404">Projects</a>
             <a href="/media/Nathaniel Kim CV.pdf" target="_blank">CV</a>
             <a href="/contact">Contact</a>
@@ -29,58 +25,5 @@ import '../style/style.css';
         <main>
             <slot />
         </main>
-        <script>
-            
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navbar = document.querySelector('.navbar');
-            
-            if (menuToggle && navbar) {
-                menuToggle.addEventListener('click', () => {
-                    navbar.classList.toggle('active');
-                    menuToggle.classList.toggle('active');
-                });
-            }
-
-            // Handle scroll-based background color
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 0) {
-                    document.body.classList.add('scrolled');
-                } else {
-                    document.body.classList.remove('scrolled');
-                }
-            });
-
-            // Set initial state
-            if (window.scrollY > 0) {
-                document.body.classList.add('scrolled');
-            }
-
-            // Image carousel functionality
-            let currentImageIndex = 0;
-            
-            function changeImage(direction: number): void {
-                const images = document.querySelectorAll('.top-image');
-                if (images.length === 0) return;
-                
-                // Remove active class from current image
-                images[currentImageIndex].classList.remove('active');
-                
-                // Update index
-                currentImageIndex += direction;
-                
-                // Wrap around if necessary
-                if (currentImageIndex >= images.length) {
-                    currentImageIndex = 0;
-                } else if (currentImageIndex < 0) {
-                    currentImageIndex = images.length - 1;
-                }
-                
-                // Add active class to new image
-                images[currentImageIndex].classList.add('active');
-            }
-            
-            // Make function available globally
-            (window as any).changeImage = changeImage;
-        </script>
 	</body>
 </html>

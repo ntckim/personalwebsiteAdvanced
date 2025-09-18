@@ -1,7 +1,7 @@
 a {
     color: rgb(16, 110, 24); 
     text-decoration: none; 
-    font-family: 'Trebuchet MS', "myFont", "korean", sans-serif; 
+    font-family: "myFont", "korean", sans-serif; 
 }
 
 @font-face {
@@ -31,71 +31,27 @@ a {
     font-style: normal;
     font-display: swap;
 }
-body{
-    font-family: "myFont", "korean", sans-serif; 
-    margin: 0;
-    overscroll-behavior: none;
-    overflow-x: hidden;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-}
 html {
     height: 100%;
 }
 
 body {
+    font-family: "myFont", "korean", sans-serif; 
     margin: 0;
     padding: 0;
     height: 100vh;
+    overscroll-behavior: none;
+    overflow-x: hidden;
     transition: background-color 1s ease;
-    background-color: black;
-    color: white;
-    display: grid;
-    grid-template-columns: 1fr 550px;
-    grid-template-rows: 1fr;
-    position: relative;
-}
-
-
-.menu-toggle {
-    display: none;
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    z-index: 30;
-
-    border: none;
-    cursor: pointer;
-    mix-blend-mode: difference;
-    padding: 0.5rem;
-}
-
-.menu-toggle span {
-    display: block;
-    width: 25px;
-    height: 3px;
     background-color: white;
-    mix-blend-mode: difference;
-    margin: 5px 0;
-    transition: all 0.3s ease;
-}
-
-.menu-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-.menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -7px);
+    color: white;
+    display: flex;
+    position: relative;
+    width: 100%;
 }
 
 .navbar {
-    font-size: 30px;
-    grid-column: 1;
+    font-size: 0.75rem;
     background-color: rgb(0,0,0,0);
     display: flex;
     flex-direction: column;
@@ -104,112 +60,14 @@ body {
     padding-bottom: 2rem;
     z-index: 10;
     pointer-events: none; /* Allow clicking through the navbar */
-    margin: 20px;
-}
-.top-bar{
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 50px;
-    z-index: 15; /* Ensure it's above other content */
-    color: white;
-    font-size: 30px;
-    margin: 20px;
-}
-.top-bar a{
-    text-decoration: none;
-    color: white;
-}
-@media screen and (max-width: 1150px) and (min-width: 768px){
-    /* Grid layout handles the spacing automatically */
-}
-/* Media query for mobile devices */
-@media screen and (max-width: 768px) {
-    body {
-        display: block; /* Switch from grid to block layout on mobile */
-    }
-    
-    .menu-toggle {
-        display: block;
-        position: fixed;
-        top: 1rem;
-        right: 1rem;
-        z-index: 30;
-        background: none;
-        border: none;
-    }
-
-    .navbar {
-        position: fixed;
-        top: 0;
-        left: 100%;
-        height: 100vh;
-        width: 200px;
-        background-color: white;
-        transition: transform 0.3s ease;
-        transform: none;
-        padding-top: 4rem;
-        grid-column: unset; /* Remove grid positioning on mobile */
-    }
-
-    .navbar.active {
-        transform: translateX(-200px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    .navbar a {
-        margin: 0;
-        font-size: 0.9rem;
-    }
-    
-    .image-carousel {
-        position: relative;
-        left: auto;
-        top: auto;
-        transform: none;
-        margin: 1rem auto 2rem auto;
-        max-width: 280px;
-        max-height: 280px;
-        order: -1; /* This moves the carousel to the top */
-    }
-    
-    .carousel-container {
-        max-width: 280px;
-        max-height: 280px;
-    }
-    
-    .top-image {
-        max-width: 280px;
-        max-height: 280px;
-    }
-    
-    .prev-btn {
-        left: -35px;
-    }
-    
-    .next-btn {
-        right: -35px;
-    }
-    
-    .carousel-btn {
-        width: 35px;
-        height: 35px;
-        font-size: 20px;
-    }
-    
-    main {
-        grid-column: unset; /* Remove grid positioning on mobile */
-        padding: 2rem;
-        width: 100%;
-        box-sizing: border-box;
-    }
+    bottom: 0;
 }
 
 .navbar a {
     text-decoration: none;
-    color: white;
-    margin: 1rem 0; /* Add vertical margin to create space between links */
+    color: black;
+    margin: 0.5rem 0; /* Reduced vertical margin to create less space between links */
     transition: color 0.3s ease;
     pointer-events: auto; /* Re-enable clicking for the links */
 }
@@ -220,272 +78,35 @@ body {
 
 /* Main content takes up the right column */
 main {
-    margin:20px; /*fix this so the margin is on all sides */
-    grid-column: 2;
-    font-size: 2rem;
+    font-size: 1rem;
     padding: 2rem;
     background-color: rgba(0, 0, 0, 0);
-    min-height: 100vh;
+    height: 100vh;
     box-sizing: border-box;
     overflow-x: hidden;
-    color: white;
-    width: 100%;
-    padding-top: 0;
-    text-align: justify;
-    text-align-last: justify;
-}
-
-/* Specific styles for main element in index.astro */
-body:has(section.hero) main {
-    padding:0;
-}
-
-.header {
-    padding-left: 1rem;
-    position: fixed;
-    z-index: 20; /* Higher than navbar's z-index */
-
-}
-
-.header a{
     color: black;
-}
-.header h1{
-    margin: 0;
-    padding: 0;
-}
-.hero {
-    height: 100vh; /* Changed from height to min-height */
-    background-size: cover;
-    background-position: center;
-    margin: 0; /* Remove margin to prevent offset */
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    position: relative; /* Add this for absolute positioning of caption */
-}
-.hero-image {
-    width: max(50%, 900px);
-    object-fit: cover;
-    margin: 0 auto;
-}
-
-.image-carousel {
-    position: fixed;
-    left: calc((100vw - 550px) / 2);
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 5;
-}
-
-.carousel-container {
-    position: relative;
-    max-width: 300px;
-    max-height: 300px;
-}
-
-.top-image {
-    max-width: 300px;
-    max-height: 300px;
-    width: auto;
-    height: auto;
-    object-fit: cover;
-    /*filter: grayscale(100%);*/
-    display: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.top-image.active {
-    display: block;
-    opacity: 1;
-}
-
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    border: none;
-    font-size: 24px;
-    font-weight: bold;
-    color: rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    transition: color 0.3s ease;
-    z-index: 10;
-    background-color: rgba(0,0,0,0);
-}
-
-.carousel-btn:hover {
-    color: white;
-}
-
-.prev-btn {
-    left: -50px;
-}
-
-.next-btn {
-    right: -50px;
-}
-
-.hero-caption {
-    position: absolute;
-    bottom: 35rem;
-    right: 7rem;
-    /*right:3rem;*/
-    background-color: rgba(255, 255, 255, 0.0);
-
-    font-size: 3rem;
-    font-weight: bold;
-    color: grey;
-    text-align: center;
-    z-index: 5;
-
-    mix-blend-mode: difference;
-}
-
-.caption-caption{
-    font-size: 2rem;
-}
-
-.content {
-    padding: 2rem;
-    background-color: white;
-
-    display: flex; /* This enables flexbox */
-    flex-direction: column; /* Stacks children vertically */
-    justify-content: center; /* Centers children vertically */
-    align-items: center; /* Centers children horizontally */
-    text-align: justify; /* Centers text horizontally for inline elements */
-    line-height: 1.6;
-    display: inline-block;
-}
-.contactInfo{
+    width: 100%;
+    text-align: justify;
+    /*word-break: break-all;*/
+    text-align-last: justify;
+    /* Center content vertically and horizontally */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    text-align: center;
-    line-height: 1.6;
+    text-indent: 0em;
 }
-.spacer-small { height: 1rem; }
-
-.projects-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px;
-  }
-  
-  .project {
-    background-color: #eee;
-
-    text-align: center;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  }
-  .project img {
-    width: 100%;
-    height: 180px;
+.pfp-image{
+    width: 150px;
+    height: 150px;
     object-fit: cover;
-  }
-
-
-
- /* ______________________NEW STUFF HERE*/
-
- .mainbox{
-    margin: 10px;
-    filter: blur(8px);
-  -webkit-filter: blur(8px);
- }
- .background{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Ensure the background is behind other content */
-    overflow: hidden; /* Prevent scrollbars */
-  }  
-  .background video{
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Cover the entire area */
-  }
-
-/* Left-streaking blur animation for all text */
-
-@keyframes leftStreak {
-    0% {
-        text-shadow: 
-            0 0 0 currentColor,
-            -1px 0 2px rgba(255, 255, 255, 0.8);
-        filter: blur(2px);
-    }
-    25% {
-        text-shadow: 
-            0 0 0 currentColor,
-            -2px 0 3px rgba(255, 255, 255, 0.9);
-    }
-    50% {
-        text-shadow: 
-            0 0 0 currentColor,
-            -3px 0 4px rgba(255, 255, 255, 1);
-
-    }
-    75% {
-        text-shadow: 
-            0 0 0 currentColor,
-            -2px 0 3px rgba(255, 255, 255, 0.9);
-
-    }
-    100% {
-        text-shadow: 
-            0 0 0 currentColor,
-            -1px 0 2px rgba(255, 255, 255, 0.8);
-        filter: blur(0px);
-    }
 }
-
-/*
 .main-text{
-    animation: leftStreak 6s ease-in-out infinite;
-}*/
-
-/* Pixelated Background Effect */
-.pixelated-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    display: grid;
-    grid-template-columns: repeat(60, 1fr);
-    grid-template-rows: repeat(40, 1fr);
-    gap: 0;
-    background-color: black;
+    justify-content: center;
+    font-size: 0.75rem;
+    line-height: 1.6;
+    padding: 2rem;
+    padding-top: 1rem;
+    max-width: 375px;
+    text-align: center;
 }
-
-.pixel {
-    width: calc(100% + 1px);
-    height: calc(100% + 1px);
-    margin: -0.5px;
-    background-image: url('/media/red.jpg');
-    background-size: 6000% 4000%; /*change values for cool things 3000 2000 is pretty cool*/
-    background-attachment: fixed;
-    transform: scale(0);
-    opacity: 0;
-    transition: all 0.3s ease-out;
-    box-sizing: border-box;
-}
-
-.pixel.revealed {
-    transform: scale(1);
-    opacity: 1;
-    animation: pixelLife 8s ease-in-out infinite;
-}
-
-
