@@ -1,0 +1,88 @@
+---
+import Layout1 from '../Layout/Layout1.astro';
+---
+
+<Layout1 title="Experiences">
+    <div class="educations-container">
+        <div class="navigation-container">
+            <div class="content-container">
+                <div id="experience-0" class="experience-item active">
+                    <div class="experiences-section">
+                        <div class="experiences">
+                            <div class="edu-title">
+                                <div class="education-title">Uchicago SUPERgroup</div>
+                                <div class="edu-date">Feb 2025 - Present</div>
+                            </div>
+                            <div class="edu-desc">
+                                <div class="degree">Research Assistant</div>
+                                <div class="project-description">
+                                    <b>Usable Privacy and Security & HCI Research</b>
+                                    <ul style="padding-left:20px">
+                                        <li>Conducted interdisciplinary research on how artists engage with privacy and security, and what privacy 
+                                            communicators can learn from them
+                                        </li>
+                                        <li>Designed and developed a MySQL database and a React website to catalog and display artworks related to
+                                            privacy and security</li>
+                                        <li>Submitted research paper to ACM CHI 2025; currently under review</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="experiences" style="margin-bottom: 0;">
+                            <div class="edu-title">
+                                <div class="education-title">Deep_Dive</div>
+                                <div class="edu-date">July-Sept 2024</div>
+                            </div>
+                            <div class="edu-desc">
+                                <div class="degree" style="margin-bottom:0;">Artificial Intelligence Intern</div>
+                                <div class="project-description">
+                                    <ul style="padding-left:20px">
+                                        <li>Developed a proprietary face recognition system to compare individuals against their government-issued IDs
+                                        </li>
+                                        <li>Researched and recommended the GhostFaceNets model to best balance performance and resource constraints</li>
+                                        <li>Established internal parameters for GhostFaceNets model and implemented machine learning training to achieve
+                                            97% accuracy</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                        <div class="experiences" style="border-top: 1px solid black; padding-top:10px;">
+                            <div class="edu-title">
+                                <div class="education-title">Skills</div>
+                            </div>
+                            <div class="edu-desc">
+                                <div class="degree" style="margin-bottom:0;">Languages:</div>
+                                <div class="project-description">
+                                    Python, HTML, CSS, JS, Java, C,  SQL, PHP, 
+                            React, Astro, MySQL, Firebase, TensorFlow, AWS, Git, Figma, Photoshop, Premier Pro
+                                </div>
+                            </div>
+                        </div>
+            </div>
+        </div>
+        <div class="navigation-indicators">
+            <span class="indicator active" data-index="0"></span>
+            <span class="indicator" data-index="1"></span>
+        </div>
+    </div>
+<style>
+.job-title{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.experiences{
+    max-width: 600px;
+    margin: 10px;
+    text-align: left;
+    text-align-last: left;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: row;
+}
+
+</style>
+
+</Layout1>

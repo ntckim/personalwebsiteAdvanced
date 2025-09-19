@@ -2,7 +2,7 @@ a {
     color: black; 
     text-decoration: underline; 
 }
-a.hover{
+a:hover{
     color: #666; 
 }
 
@@ -219,6 +219,10 @@ main {
         width: 120px;
         height: 120px;
     }
+
+    .educations-container{
+        padding-top: 100px;
+        }
 }
 .project{
     text-align-last: left;
