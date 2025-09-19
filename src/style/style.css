@@ -35,7 +35,7 @@ a.hover{
 }
 html {
     height: 100%;
-    font-size: .8rem;
+    font-size: 0.8rem;
 }
 
 body {
@@ -101,8 +101,6 @@ main {
 }
 .main-text{
     justify-content: center;
-    line-height: 1.6;
-    padding: 2rem;
     padding-top: 1rem;
     max-width: 375px;
     text-align: justify;
@@ -221,4 +219,66 @@ main {
         width: 120px;
         height: 120px;
     }
+}
+.project{
+    text-align-last: left;
+    max-width: 375px;
+}
+.projects-container{
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: left;
+    text-align-last: left;
+}
+.project-title{
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: left;
+    text-align-last: left;
+}
+.project-date{
+    text-align-last: left;
+    text-align: left;
+}
+.project-technologies{
+    font-size: 1.25rem;
+    text-align: left;
+    text-align-last: left;
+}
+.education-title{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.educations{
+    max-width: 500px;
+    margin: 10px;
+    text-align: left;
+    text-align-last: left;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: row;
+}
+.edu-date{
+    font-size: 1rem;
+    text-align: left;
+    text-align-last: left;
+
+}
+.edu-title{
+    min-width: 150px;
+    max-width: 150px;
+    margin-right: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+.edu-desc{
+    display: flex;
+    flex-direction: column;
+}
+.degree{
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
 }

@@ -1,26 +1,15 @@
 ---
-import Layout from '../Layout/layout.astro';
+import Layout1 from '../Layout/Layout1.astro';
 ---
 
-<Layout title="Projects">
+<Layout1 title="Projects">
     <div class="projects-container">
-        <a href="./projects/go" class="project">
-          <img src="/media/profile.jpg" alt="Go">
-          <p>Go</p>
-        </a>
-        <a href="https://example.com/project2" class="project">
-          <img src="project2.jpg" alt="Project 2">
-          <p>Project 2</p>
-        </a>
-        <a href="https://example.com/project3" class="project">
-          <img src="project3.jpg" alt="Project 3">
-          <p>Project 3</p>
-        </a>
-        <a href="https://example.com/project4" class="project">
-          <img src="project4.jpg" alt="Project 4">
-          <p>Project 4</p>
-        </a>
-        <!-- Add more as needed -->
-      </div>
-      
-</Layout>
+      <ol>
+        <li><a href="https://example.com/project1" class="project">Dev Simplified</a></li>
+        <li><a href="https://example.com/project2" class="project">Two-Twenty-Five</a></li>
+        <!--<li><a href="https://example.com/project3" class="project">Code Painting</a></li> -->
+        <li><a href="./projects/go" class="project">Go</a></li>
+        <li><a href="https://example.com/project4" class="project">Movie Recommendation System</a></li>
+      </ol>
+    </div>
+</Layout1>
