@@ -1,5 +1,5 @@
 ---
-const { title = "DefaultValue" } = Astro.props;
+const { title = "DefaultValue", mainClass = "" } = Astro.props;
 import '../style/style.css';
 ---
 
@@ -39,7 +39,7 @@ import '../style/style.css';
             </nav>
         </div>
         
-        <main>
+        <main class={mainClass}>
             <slot />
         </main>
 

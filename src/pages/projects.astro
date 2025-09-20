@@ -2,14 +2,66 @@
 import Layout1 from '../Layout/Layout1.astro';
 ---
 
-<Layout1 title="Projects">
+<Layout1 title="Projects" mainClass="projects-page">
     <div class="projects-container">
+      <!--
       <ol>
-        <li><a href="https://example.com/project1" class="project">Dev Simplified</a></li>
-        <li><a href="https://example.com/project2" class="project">Two-Twenty-Five</a></li>
-        <!--<li><a href="https://example.com/project3" class="project">Code Painting</a></li> -->
+        <li><a href="./projects/devSimplified" class="project">Dev Simplified</a></li>
+        <li><a href="./projects/225" class="project">TwoTwentyFive</a></li>
         <li><a href="./projects/go" class="project">Go</a></li>
-        <li><a href="https://example.com/project4" class="project">Movie Recommendation System</a></li>
+        <li><a href="./projects/movieRecs" class="project">Movie Recommendation System</a></li>
       </ol>
+       -->
+       <div class = "project">
+        <div class = "project-date">May 2025 - August 2025</div>
+        <div class = "project-title">Dev Simplified</div>
+        <div class = "project-technologies"><b>Website, AI</b> | React, HTML/CSS/JS</div>
+        <div class = "project-technologies" style = "margin-bottom: 10px;"><a href="https://github.com/ntckim/Dev-Simplified" target = "_blank">Source Code</a></div>
+            <div class = "project-description">
+                An interactive platform for algorithm visualization and AI-powered technical and behavioral interview prep.
+                Includes an algorithm visualizer to visualize user-inputted tree algorithms such as DFS and BFS. 
+                Also includes an AI-powered interview prep tool that uses Deepseek's API to conduct live mock behavioral and 
+                technical interviews tailored specifically to the user based on their resume and job description.
+            </div>
+    
+    </div>
+    <div class = "project">
+      <div class = "project-date">April 2025 -August 2024</div>
+      <div class = "project-title">TwoTwentyFive</div>
+      <div class = "project-technologies"><b>Mobile App</b> | React Native, Firebase, Expo</div>
+      <div class = "project-technologies" style = "margin-bottom: 10px;"><a href="https://github.com/alisk8/gymapp" target = "_blank">Source Code</a></div>
+          <div class = "project-description">
+              A social workout tracker mobile app that makes weightlifting progress simple, motivating, and community-driven. 
+              Users can log their workouts, track their progress over time, and connect with friends to share their 
+              workouts and other gym content. The app also provides users with personalized feedback and 
+              recommendations based on their workout history and goals.
+          </div>
+  
+  </div>
+  <div class = "project">
+    <div class = "project-date">February, 2024</div>
+    <div class = "project-title">Go</div>
+    <div class = "project-technologies"><b>Game</b> | Python, Pygame</div>
+    <div class = "project-technologies" style = "margin-bottom: 10px;">Source code available upon request</div>
+        <div class = "project-description">
+            An implementation of the game Go with a GUI and TUI. This was made 
+            in Python with the use of Pytorch for the GUI. You can play against a 
+            computer or another local player. There are three play styles for the AI 
+            (random, smart, and aggressive). 
+        </div>
+
+</div>
+<div class = "project">
+  <div class = "project-date">June 2023</div>
+  <div class = "project-title">Least Squares Movie Recommendation System</div>
+  <div class = "project-technologies"><b>Data Science</b> | Python</div>
+  <div class = "project-technologies" style = "margin-bottom: 10px;"><a href="https://github.com/ntckim/Least-Squares" target = "_blank">Source Code</a></div>
+      <div class = "project-description">
+          A movie recommendation system that uses least squares to predict user ratings based on movies.
+          Data is scraped from Letterboxd.com, a social media platform for rating movies.
+          Analysis is done with Pandas, Numpy, and Sklearn libraries in Python.
+      </div>
+
+</div>
     </div>
 </Layout1>
