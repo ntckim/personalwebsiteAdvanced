@@ -93,6 +93,11 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    justify-content: flex-start;  /* Start from top */
+    align-items: center;
+    padding: 2rem;
+    min-height: 100vh;
+    margin: auto 0;
 }
 
 /* Specific styling for projects page to start from top */
@@ -113,10 +118,57 @@ main {
 
 /* Override main centering for projects page */
 main.projects-page {
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+    min-height: 100vh;
+}
+
+/* Override main centering for index page */
+main.index-page {
     justify-content: flex-start;
     align-items: center;
-    padding-top: 2rem;
+    padding: 2rem;
+    min-height: 100vh;
 }
+
+/* Override main centering for education page */
+main.education-page {
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+/* Override main centering for experiences page */
+main.experiences-page {
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+/* Specific styling for educations container */
+.educations-container {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: left;
+    text-align-last: left;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    align-items: center;
+}
+/* Index page content wrapper for safe centering */
+.index-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto 0;
+}
+
 .pfp-image{
     width: 150px;
     height: 150px;
@@ -215,6 +267,10 @@ main.projects-page {
     color: #666;
 }
 
+.project-description{
+    text-align: justify;
+}
+
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
     .mobile-menu-btn {
@@ -246,6 +302,10 @@ main.projects-page {
     .educations-container{
         padding-top: 100px;
         }
+    .project-description{
+        text-align: left;
+        text-align-last: left;
+    }
 }
 .project{
     text-align-last: left;
@@ -299,7 +359,4 @@ main.projects-page {
 .degree{
     font-size: 1.25rem;
     margin-bottom: 1rem;
-}
-.project-description{
-    text-align: justify;
 }
