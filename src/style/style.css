@@ -5,7 +5,12 @@ a {
 a:hover{
     color: #666; 
 }
-
+@font-face{
+    font-family: "Kosugi";
+    font-weight: normal;
+    font-style: normal;
+    src: url("../Fonts/Kosugi/Kosugi-Regular.woff2") format("woff2");
+}
 @font-face {
     font-family: "myFont";
     src: url("../Fonts/ShipporiMincho-Regular.woff2") format("woff2");
@@ -25,7 +30,6 @@ a:hover{
     font-style: normal;
     font-display: swap;
 }
-
 @font-face {
     font-family: 'korean';
     src: url('../Fonts/GowunBatang-Bold.woff2') format('woff2');
@@ -148,6 +152,14 @@ main.experiences-page {
     min-height: 100vh;
 }
 
+/* Override main centering for contact page */
+main.contact-page {
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2rem;
+    min-height: 100vh;
+}
+
 /* Specific styling for educations container */
 .educations-container {
     font-size: 1rem;
@@ -186,6 +198,7 @@ main.experiences-page {
     font-size: 1rem;
     text-align: center;
     text-align-last: center;
+    margin: auto 0;
 }
 
 /* Mobile Menu Styles */
@@ -359,4 +372,11 @@ main.experiences-page {
 .degree{
     font-size: 1.25rem;
     margin-bottom: 1rem;
+}
+.logo{
+    font-family: "Kosugi", sans-serif;
+    font-size: 2rem;
+    background-color: white;
+    margin:10px;
+    color: black;
 }
